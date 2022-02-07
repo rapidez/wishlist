@@ -17,8 +17,7 @@
             return this.$scopedSlots.default({
                 mutation: this.mutation,
                 variables: this.variables,
-                wishlistItem: this.wishlistItem,
-                itemsCount: this.itemsCount
+                wishlistItem: this.wishlistItem
             })
         },
 
