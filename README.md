@@ -6,9 +6,9 @@
 composer require rapidez/wishlist
 ```
 
-And register the Vue component in `resources/js/app.js`:
+And require the Javascript in `resources/js/app.js`:
 ```
-Vue.component('wishlist', require('Vendor/rapidez/wishlist/resources/js/Wishlist.vue').default)
+require('Vendor/rapidez/wishlist/resources/js/wishlist.js')
 ```
 
 If you haven't published the Rapidez views yet, publish them with:
@@ -17,7 +17,7 @@ php artisan vendor:publish --provider="Rapidez\Wishlist\WishlistServiceProvider"
 ```
 
 ### Product page
-Include the add-to-wishlist-button to the product page, for example in `resources/views/vendor/rapidez/listing/partials/item/addtocart.blade.php`:
+Include the add-to-wishlist-button to the product page, for example in `resources/views/vendor/rapidez/product/partials/addtocart.blade.php`:
 ```
 @include('rapidez::wishlist.product.add-to-wishlist')
 ```
@@ -29,11 +29,11 @@ Include the add-to-wishlist-button to the listing items, for example in `resourc
 ```
 
 ### Wishlist items count
-You can get the count of the customer's wishlist items by using the customer graphql query. For example:
+You can get the count of the customer's wishlist items by using the wishlist component. For example:
 ```
-<graphql v-if="$root.user" v-cloak query="{ customer { wishlists { id items_v2 { items { id product { sku } } } } } }">
-    <span v-if="data" slot-scope="{ data }">
-        @{{ data.customer.wishlists[0].items_v2.items.length }}
+<wishlist>
+    <span slot-scope="{ itemsCount }">
+        @{{ itemsCount }}
     </span>
-</graphql>
+</wishlist>
 ```

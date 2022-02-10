@@ -4,15 +4,15 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query="{ customer { wishlists { id items_v2 { items { id product { sku } } } } } }">
-            <div v-if="data" slot-scope="{ data, runQuery }" :set="wishlist = data.customer.wishlists[0]">
-                <div v-if="data.customer.wishlists[0].items_v2.items.length">
+        <wishlist>
+            <div slot-scope="{ wishlist, refreshWishlist }">
+                <div v-if="wishlist.items_v2.items.length">
                     <reactive-base v-cloak :app="config.es_prefix + '_products_' + config.store" :url="config.es_url">
                         <reactive-list
                             component-id="wishlist"
                             data-field="sku.keyword"
                             :size="999"
-                            :default-query="function () { return { query: { terms: { 'sku.keyword': data.customer.wishlists[0].items_v2.items.map(item => item.product.sku) } } } }"
+                            :default-query="function () { return { query: { terms: { 'sku.keyword': wishlist.items_v2.items.map(item => item.product.sku) } } } }"
                         >
                             <div slot="renderResultStats"></div>
                             <div slot="renderNoResults"></div>
@@ -26,7 +26,7 @@
                                                 wishlistId: wishlist.id,
                                                 wishlistItemsIds: [wishlist.items_v2.items[index].id]
                                             }"
-                                            :callback="runQuery"
+                                            :callback="refreshWishlist"
                                         >
                                             <div slot-scope="{ mutate, mutated }">
                                                 <form class="relative z-10" v-on:submit.prevent="mutate">
@@ -61,7 +61,7 @@
                             wishlistId: wishlist.id,
                             wishlistItemIds: []
                         }"
-                        :callback="() => {runQuery(); $root.$emit('refresh-cart');}"
+                        :callback="() => {refreshWishlist(); $root.$emit('refresh-cart');}"
                     >
                         <form class="relative z-10" slot-scope="{ mutate, mutated }" v-on:submit.prevent="mutate">
                             <button type="submit" class="absolute right-1">
@@ -74,6 +74,6 @@
                     @lang('You have no items in your wish list.')
                 </div>
             </div>
-        </graphql>
+        </wishlist>
     </div>
 @endsection
