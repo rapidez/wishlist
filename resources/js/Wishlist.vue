@@ -6,10 +6,6 @@
         props: {
             sku: {
                 type: String
-            },
-            customer: {
-                type: Object,
-                default: () => ({})
             }
         },
 
@@ -17,26 +13,85 @@
             return this.$scopedSlots.default({
                 mutation: this.mutation,
                 variables: this.variables,
-                wishlistItem: this.wishlistItem
+                wishlistItem: this.wishlistItem,
+                refreshWishlist: this.refreshWishlist,
+                itemsCount: this.itemsCount,
+                wishlist: this.wishlist
             })
         },
 
-        computed: {
-            wishlistItem() {
-                return this.customer.wishlists[0].items_v2.items.find(a => a.product.sku == this.sku) ?? false
+        data() {
+            return {
+                wishlistItem: false,
+                mutation: {},
+                variables: {},
+                itemsCount: 0,
+                wishlist: {}
+            }
+        },
+
+        methods: {
+            setWishlistItem() {
+                let wishlist = localStorage.wishlist ? JSON.parse(localStorage.wishlist) : []
+                if (!wishlist || !wishlist.items_v2.items.length) {
+                    return false
+                }
+
+                let wishlistItem = false
+                wishlist.items_v2.items.forEach((item) => {
+                    if (item.product.sku == this.sku) {
+                        wishlistItem = item
+                        return
+                    }
+                })
+
+                this.wishlistItem = wishlistItem
             },
-            mutation() {
-                return this.wishlistItem ? removeProductsFromWishlist.loc.source.body : addProductsToWishlist.loc.source.body
+
+            setMutation() {
+                this.mutation = this.wishlistItem ? removeProductsFromWishlist.loc.source.body : addProductsToWishlist.loc.source.body
             },
-            variables() {
-                return this.wishlistItem ? {
-                    wishlistId: this.customer.wishlists[0].id,
+
+            setVariables() {
+                this.variables = this.wishlistItem ? {
+                    wishlistId: JSON.parse(localStorage.wishlist).id,
                     wishlistItemsIds: [this.wishlistItem.id]
                 } : {
                     wishlistId: 0,
                     wishlistItems: [{sku: this.sku, quantity: 1}]
                 }
+            },
+
+            setWishlist() {
+                this.wishlist = localStorage.wishlist ? JSON.parse(localStorage.wishlist) : false
+            },
+
+            setItemsCount() {
+                this.itemsCount = localStorage.wishlist ? JSON.parse(localStorage.wishlist).items_v2.items.length : 0
+            },
+
+            async refreshWishlist() {
+                await this.$root.getWishlist()
+                this.setWishlistItem()
+                this.setMutation()
+                this.setVariables()
+                this.setWishlist()
+                this.$root.$emit('refreshed-wishlist')
             }
+        },
+
+        created() {
+            if (this.sku) {
+                this.setWishlistItem()
+                this.setMutation()
+                this.setVariables()
+            }
+            this.setWishlist()
+            this.setItemsCount()
+        },
+
+        mounted() {
+            this.$root.$on('refreshed-wishlist', this.setItemsCount)
         }
     }
 </script>
