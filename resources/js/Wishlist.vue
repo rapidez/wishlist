@@ -32,6 +32,7 @@
                 let items = response.data.data[mutationName].wishlist
                 this.wishlist = items
                 localStorage.wishlist = JSON.stringify(items)
+                this.$root.$emit('wishlist-changed')
             }
         },
 
@@ -39,6 +40,10 @@
             if (localStorage.wishlist) {
                 this.wishlist = JSON.parse(localStorage.wishlist)
             }
+
+            this.$root.$on('wishlist-changed', () => {
+                this.wishlist = JSON.parse(localStorage.wishlist)
+            })
         },
 
         computed: {

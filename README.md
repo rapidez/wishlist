@@ -38,7 +38,7 @@ The wishlist account page can be found on `/account/wishlist` and [will be added
 
 You can get the count of the customer's wishlist items by using the wishlist component. For example:
 ```
-<wishlist>
+<wishlist v-cloak>
     <span slot-scope="{ itemsCount }">
         @{{ itemsCount }}
     </span>
