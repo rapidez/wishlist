@@ -15,12 +15,6 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "git@github.com:rapidez/core.git"
-        }
-    ],
     "require": {
         "php": "^7.4",
         "illuminate/database": "^8.0",

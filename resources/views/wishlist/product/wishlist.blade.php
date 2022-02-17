@@ -1,13 +1,13 @@
 <wishlist v-if="$root.user" :sku="config.product.sku">
-    <div slot-scope="{ mutation, variables, wishlistItem, refreshWishlist }">
+    <div slot-scope="{ mutation, variables, isOnWishlist, wishlistCallback }">
         <graphql-mutation
             :query="mutation"
             :variables="variables"
-            :callback="refreshWishlist"
+            :callback="wishlistCallback"
         >
             <form slot-scope="{ mutate, mutated }" v-on:submit.prevent="mutate">
                 <x-rapidez::button type="submit">
-                    <template v-if="wishlistItem">
+                    <template v-if="isOnWishlist">
                         @lang('Remove from wishlist')
                     </template>
                     <template v-else>
