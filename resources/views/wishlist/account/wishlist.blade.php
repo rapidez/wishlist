@@ -10,8 +10,8 @@
                     <graphql-mutation
                         query="mutation ( $wishlistId: ID! $wishlistItemIds: [ID!]! ) { addWishlistItemsToCart ( wishlistId: $wishlistId wishlistItemIds: $wishlistItemIds ) { wishlist { id items_count } } }"
                         :variables="{ wishlistId: wishlist.id, wishlistItemIds: [] }"
-                        :callback="(changes, data, response) => {
-                            wishlistCallback(changes, data, response);
+                        :callback="(data, response) => {
+                            wishlistCallback(data, response);
                             $root.$emit('refresh-cart');
                         }"
                     >

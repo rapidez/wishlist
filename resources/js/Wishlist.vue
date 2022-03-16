@@ -27,7 +27,7 @@
         },
 
         methods: {
-            wishlistCallback(changes, data, response) {
+            wishlistCallback(data, response) {
                 let mutationName = Object.keys(response.data.data)[0]
                 let items = response.data.data[mutationName].wishlist
                 this.wishlist = items
