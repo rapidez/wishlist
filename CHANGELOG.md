@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.2.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.2.1...master)
+
+## [0.2.1](https://github.com/org/repo/compare/0.2.0...0.2.1) - 2022-08-26
+
+### Fixed
+
+- Added ids to the queries (#4)
 
 ## [0.2.0](https://github.com/org/repo/compare/0.1.2...0.2.0) - 2022-04-11
 
