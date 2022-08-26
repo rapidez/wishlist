@@ -15,6 +15,7 @@ export default {
                         id
                         product {
                             sku
+                            id
                         }
                     }
                 }
