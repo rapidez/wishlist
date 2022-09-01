@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.2.2...master)
+## [Unreleased](https://github.com/org/repo/compare/0.2.3...master)
+
+## [0.2.3](https://github.com/org/repo/compare/0.2.2...0.2.3) - 2022-09-01
+
+### Fixed
+
+- Allow global use (#6)
 
 ## [0.2.2](https://github.com/org/repo/compare/0.2.1...0.2.2) - 2022-09-01
 
