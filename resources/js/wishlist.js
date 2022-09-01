@@ -7,7 +7,7 @@ document.addEventListener('turbolinks:load', () => {
         }, { headers: { Authorization: `Bearer ${localStorage.token}` }})
 
         localStorage.wishlist = JSON.stringify(response.data.data.customer.wishlists[0])
-        this.$root.$emit('wishlist-changed')
+        window.app.$emit('wishlist-changed')
     });
 
     window.app.$on('logout', () => {
