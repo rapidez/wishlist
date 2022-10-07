@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.2.3...master)
+## [Unreleased](https://github.com/org/repo/compare/0.2.4...master)
+
+## [0.2.4](https://github.com/org/repo/compare/0.2.3...0.2.4) - 2022-10-07
+
+### Fixed
+
+- Store header (#7)
 
 ## [0.2.3](https://github.com/org/repo/compare/0.2.2...0.2.3) - 2022-09-01
 
