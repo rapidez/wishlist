@@ -1,4 +1,4 @@
-Vue.component('wishlist', require('Vendor/rapidez/wishlist/resources/js/Wishlist.vue').default)
+Vue.component('wishlist', () => import('Vendor/rapidez/wishlist/resources/js/Wishlist.vue'))
 
 document.addEventListener('turbolinks:load', () => {
     window.app.$on('logged-in', async () => {
