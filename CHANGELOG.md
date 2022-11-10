@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.2.4...master)
+## [Unreleased](https://github.com/org/repo/compare/0.2.5...master)
+
+## [0.2.5](https://github.com/org/repo/compare/0.2.4...0.2.5) - 2022-11-10
+
+### Fixed
+
+- Use import instead of require (#8)
 
 ## [0.2.4](https://github.com/org/repo/compare/0.2.3...0.2.4) - 2022-10-07
 
