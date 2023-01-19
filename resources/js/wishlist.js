@@ -1,7 +1,7 @@
 import wishlist from 'Vendor/rapidez/wishlist/resources/js/Wishlist.vue'
 Vue.component('wishlist', wishlist)
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbo:load', () => {
     window.app.$on('logged-in', async () => {
         let response = await axios.post(config.magento_url + '/graphql', {
             query: '{ customer { wishlists { id items_v2 { items { id product { sku id } } } } } }'
