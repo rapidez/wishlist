@@ -1,4 +1,4 @@
-<wishlist v-if="$root.user" :sku="config.product.sku">
+<wishlist v-if="$root.user" :sku="{{ isset($product) ? 'config.product.sku' : 'item.sku' }}">
     <div slot-scope="{ mutation, variables, isOnWishlist, wishlistCallback }">
         <graphql-mutation
             :query="mutation"
@@ -7,12 +7,8 @@
         >
             <form slot-scope="{ mutate, mutated }" v-on:submit.prevent="mutate">
                 <x-rapidez::button type="submit">
-                    <template v-if="isOnWishlist">
-                        @lang('Remove from wishlist')
-                    </template>
-                    <template v-else>
-                        @lang('Add to wishlist')
-                    </template>
+                    <x-heroicon-s-heart v-if="isOnWishlist" class="h-5 w-5" />
+                    <x-heroicon-o-heart v-else class="h-5 w-5" />
                 </x-rapidez::button>
             <form>
         </graphql-mutation>
@@ -20,5 +16,5 @@
 </wishlist>
 
 <x-rapidez::button v-else href="/login">
-    @lang('Add to wishlist')
+    <x-heroicon-o-heart class="h-5 w-5" />
 </x-rapidez::button>
