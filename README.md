@@ -20,14 +20,14 @@ php artisan vendor:publish --provider="Rapidez\Wishlist\WishlistServiceProvider"
 
 Include the wishlist button on the product page, for example in `resources/views/vendor/rapidez/product/partials/addtocart.blade.php`:
 ```
-@include('rapidez::wishlist.product.wishlist')
+@include('rapidez::wishlist.button')
 ```
 
 ### Product listing
 
 Include the wishlist button on the listing items, for example in `resources/views/vendor/rapidez/listing/partials/item/addtocart.blade.php`:
 ```
-@include('rapidez::wishlist.listing.wishlist')
+@include('rapidez::wishlist.button')
 ```
 
 ### Account wishlist page
