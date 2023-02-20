@@ -1,6 +1,6 @@
 <script>
-    import removeProductsFromWishlist from './graphql/removeProductsFromWishlist'
-    import addProductsToWishlist from './graphql/addProductsToWishlist'
+    import removeProductsFromWishlist from '../graphql/removeProductsFromWishlist'
+    import addProductsToWishlist from '../graphql/addProductsToWishlist'
 
     export default {
         props: {
