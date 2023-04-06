@@ -2,31 +2,26 @@
 
 ## Installation
 
-```
+```bash
 composer require rapidez/wishlist
 ```
 
-And require the Javascript in `resources/js/app.js`:
-```
-require('Vendor/rapidez/wishlist/resources/js/wishlist.js')
-```
-
 If you haven't published the Rapidez views yet, publish them with:
-```
+```bash
 php artisan vendor:publish --provider="Rapidez\Wishlist\WishlistServiceProvider" --tag=views
 ```
 
 ### Product page
 
 Include the wishlist button on the product page, for example in `resources/views/vendor/rapidez/product/partials/addtocart.blade.php`:
-```
+```blade
 @include('rapidez::wishlist.product.wishlist')
 ```
 
 ### Product listing
 
 Include the wishlist button on the listing items, for example in `resources/views/vendor/rapidez/listing/partials/item/addtocart.blade.php`:
-```
+```blade
 @include('rapidez::wishlist.listing.wishlist')
 ```
 
@@ -37,7 +32,7 @@ The wishlist account page can be found on `/account/wishlist` and [will be added
 ### Wishlist items count
 
 You can get the count of the customer's wishlist items by using the wishlist component. For example:
-```
+```blade
 <wishlist v-cloak>
     <span slot-scope="{ itemsCount }">
         @{{ itemsCount }}
