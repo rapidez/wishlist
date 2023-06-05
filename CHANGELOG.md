@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.4.0...master)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.5.0...master)
+## [0.5.0](https://github.com/rapidez/wishlist/releases/tag/0.5.0) - 2023-05-16
+
+#### Changed
+
+- One wishlist button component (#13)
+
 ## [0.4.0](https://github.com/rapidez/wishlist/releases/tag/0.4.0) - 2023-04-06
 
 #### Added
