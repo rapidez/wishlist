@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.5.1...master)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.5.2...master)
+## [0.5.2](https://github.com/rapidez/wishlist/releases/tag/0.5.2) - 2023-07-11
+
+### Fixed
+
+- Update user check for 1.x compatibility (#17)
+
 ## [0.5.1](https://github.com/rapidez/wishlist/releases/tag/0.5.1) - 2023-07-04
 
 ### Fixed
