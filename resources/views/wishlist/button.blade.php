@@ -1,4 +1,4 @@
-<wishlist v-cloak v-if="$root.user" :sku="{{ isset($product) ? 'config.product.sku' : 'item.sku' }}">
+<wishlist v-cloak v-cloak v-if="$root.user?.id" :sku="{{ isset($product) ? 'config.product.sku' : 'item.sku' }}">
     <div slot-scope="{ mutation, variables, isOnWishlist, wishlistCallback }">
         <graphql-mutation
             :query="mutation"
@@ -15,6 +15,6 @@
     </div>
 </wishlist>
 
-<x-rapidez::button v-else href="/login">
+<x-rapidez::button v-else :href="route('account.login')">
     <x-heroicon-o-heart class="h-5 w-5" />
 </x-rapidez::button>
