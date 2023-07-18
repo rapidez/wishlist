@@ -1,4 +1,4 @@
-<wishlist v-cloak v-cloak v-if="$root.user?.id" :sku="{{ isset($product) ? 'config.product.sku' : 'item.sku' }}">
+<wishlist v-cloak v-if="$root.user?.id" :sku="{{ isset($product) ? 'config.product.sku' : 'item.sku' }}">
     <div slot-scope="{ mutation, variables, isOnWishlist, wishlistCallback }">
         <graphql-mutation
             :query="mutation"
