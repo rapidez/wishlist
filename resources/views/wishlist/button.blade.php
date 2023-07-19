@@ -10,7 +10,7 @@
                     <x-heroicon-s-heart v-if="isOnWishlist" class="h-5 w-5" />
                     <x-heroicon-o-heart v-else class="h-5 w-5" />
                 </x-rapidez::button>
-            <form>
+            </form>
         </graphql-mutation>
     </div>
 </wishlist>
