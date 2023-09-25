@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.5.3...master)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.5.4...master)
+## [0.5.4](https://github.com/rapidez/wishlist/releases/tag/0.5.4) - 2023-09-22
+
+### Added
+
+- Laravel 10 support (d18849d)
+
 ## [0.5.3](https://github.com/rapidez/wishlist/releases/tag/0.5.3) - 2023-07-19
 
 ### Fixed
