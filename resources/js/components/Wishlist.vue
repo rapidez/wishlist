@@ -1,6 +1,9 @@
 <script>
+    import { useLocalStorage } from '@vueuse/core';
     import removeProductsFromWishlist from '../graphql/removeProductsFromWishlist'
     import addProductsToWishlist from '../graphql/addProductsToWishlist'
+
+    const wishlist = useLocalStorage('wishlist', {});
 
     export default {
         props: {
@@ -22,7 +25,7 @@
 
         data() {
             return {
-                wishlist: {}
+                wishlist: wishlist
             }
         },
 
@@ -30,20 +33,9 @@
             wishlistCallback(data, response) {
                 let mutationName = Object.keys(response.data.data)[0]
                 let items = response.data.data[mutationName].wishlist
-                this.wishlist = items
-                localStorage.wishlist = JSON.stringify(items)
+                wishlist.value = items
                 this.$root.$emit('wishlist-changed')
             }
-        },
-
-        created() {
-            if (localStorage.wishlist) {
-                this.wishlist = JSON.parse(localStorage.wishlist)
-            }
-
-            this.$root.$on('wishlist-changed', () => {
-                this.wishlist = JSON.parse(localStorage.wishlist)
-            })
         },
 
         computed: {
