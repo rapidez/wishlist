@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/0.5.4...master)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/2.0.0...master)
+## [2.0.0](https://github.com/rapidez/wishlist/releases/tag/2.0.0) - 2024-05-23
+
+### Added
+
+- Rapidez v2 compatibility (#22)
+
 ## [0.5.4](https://github.com/rapidez/wishlist/releases/tag/0.5.4) - 2023-09-22
 
 ### Added
