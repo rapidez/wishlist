@@ -31,8 +31,8 @@
 
         methods: {
             wishlistCallback(data, response) {
-                let mutationName = Object.keys(response.data.data)[0]
-                let items = response.data.data[mutationName].wishlist
+                let mutationName = Object.keys(response.data)[0]
+                let items = response.data[mutationName].wishlist
                 wishlist.value = items
                 this.$root.$emit('wishlist-changed')
             }
