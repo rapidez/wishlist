@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/2.0.0...master)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/2.1.0...master)
+## [2.1.0](https://github.com/rapidez/wishlist/releases/tag/2.1.0) - 2024-08-13
+
+### Added
+
+- Laravel 11 support (#23)
+
 ## [2.0.0](https://github.com/rapidez/wishlist/releases/tag/2.0.0) - 2024-05-23
 
 ### Added
