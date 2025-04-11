@@ -1,6 +1,18 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/2.1.1...master)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/3.0.0...3.0.0)
+## [3.0.0](https://github.com/rapidez/wishlist/releases/tag/3.0.0) - 2025-04-10
+
+### Changed
+
+- Handle the Laravel requirement through the core requirement (044df66)
+
+## [2.1.2](https://github.com/rapidez/wishlist/releases/tag/2.1.2) - 2024-12-20
+
+### Fixed
+
+- Make use of $root.loggedIn (#25)
+
 ## [2.1.1](https://github.com/rapidez/wishlist/releases/tag/2.1.1) - 2024-11-29
 
 ### Fixed
