@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/3.0.0...3.0.0)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/4.0.0...4.0.0)
+## [4.0.0](https://github.com/rapidez/wishlist/releases/tag/4.0.0) - 2025-05-20
+
+### Added
+
+- Rapidez v4 support (0eb87f0)
+
 ## [3.0.0](https://github.com/rapidez/wishlist/releases/tag/3.0.0) - 2025-04-10
 
 ### Changed
