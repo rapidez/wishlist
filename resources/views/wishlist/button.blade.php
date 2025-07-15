@@ -5,16 +5,14 @@
             :variables="variables"
             :callback="wishlistCallback"
         >
-            <form slot-scope="{ mutate, mutated }" v-on:submit.prevent="mutate">
-                <x-rapidez::button type="submit">
-                    <x-heroicon-s-heart v-if="isOnWishlist" class="h-5 w-5" />
-                    <x-heroicon-o-heart v-else class="h-5 w-5" />
-                </x-rapidez::button>
-            </form>
+            <button class="block" slot-scope="{ mutate, mutated }" v-on:click.prevent="mutate">
+                <x-heroicon-s-heart v-if="isOnWishlist" class="size-5" />
+                <x-heroicon-o-heart v-else class="size-5 text-muted" />
+            </button>
         </graphql-mutation>
     </div>
 </wishlist>
 
-<x-rapidez::button v-else :href="route('account.login')">
-    <x-heroicon-o-heart class="h-5 w-5" />
-</x-rapidez::button>
+<a v-else href="{{ route('account.login') }}">
+    <x-heroicon-o-heart class="size-5 text-muted"  />
+</a>
