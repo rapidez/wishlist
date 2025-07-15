@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/4.0.0...4.0.0)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/4.1.0...4.1.0)
+## [4.1.0](https://github.com/rapidez/wishlist/releases/tag/4.1.0) - 2025-07-15
+
+### Changed
+
+- Restructured html to allow better positioning (#26)
+
 ## [4.0.0](https://github.com/rapidez/wishlist/releases/tag/4.0.0) - 2025-05-20
 
 ### Added
