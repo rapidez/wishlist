@@ -7,7 +7,7 @@ document.addEventListener('vue:loaded', () => {
         )
 
         useLocalStorage('wishlist', response.data.customer.wishlists[0]).value = response.data.customer.wishlists[0];
-        window.$emit('rapidez:wishlist-changed', { wishlist: response.data.customer.wishlists[0] })
+        window.$emit('rapidez:wishlist-changed', response.data.customer.wishlists[0])
     });
 
     window.$on('rapidez:logout', () => {
