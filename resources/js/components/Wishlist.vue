@@ -12,16 +12,19 @@
             }
         },
 
-        render() {
-            return this.$scopedSlots.default({
-                mutation: this.mutation,
-                variables: this.variables,
-                isOnWishlist: this.isOnWishlist,
-                wishlistCallback: this.wishlistCallback,
-                itemsCount: this.itemsCount,
-                wishlist: this.wishlist
-            })
-        },
+            render() {
+                // Vue 3: slots are functions on `$slots`. Pass the raw wishlist value so templates can use it normally.
+                return this.$slots && this.$slots.default
+                    ? this.$slots.default({
+                        mutation: this.mutation,
+                        variables: this.variables,
+                        isOnWishlist: this.isOnWishlist,
+                        wishlistCallback: this.wishlistCallback,
+                        itemsCount: this.itemsCount,
+                        wishlist: this.wishlist
+                    })
+                    : null
+            },
 
         data() {
             return {
@@ -34,7 +37,7 @@
                 let mutationName = Object.keys(response.data)[0]
                 let items = response.data[mutationName].wishlist
                 wishlist.value = items
-                this.$root.$emit('wishlist-changed')
+                window.$emit('rapidez:wishlist-changed', items)
             }
         },
 
@@ -53,7 +56,7 @@
 
             variables() {
                 return this.isOnWishlist
-                    ? { wishlistId: this.wishlist.id, wishlistItemsIds: [this.wishlistItem.id] }
+                    ? { wishlistId: this.wishlist?.id, wishlistItemsIds: [this.wishlistItem.id] }
                     : { wishlistId: 0, wishlistItems: [{sku: this.sku, quantity: 1}] }
             },
 
