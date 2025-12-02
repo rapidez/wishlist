@@ -11,7 +11,7 @@
                     :variables="{ wishlistId: wishlist.id, wishlistItemIds: [] }"
                     :callback="(data, response) => {
                         wishlistCallback(data, response);
-                        window.$emit('rapidez:refresh-cart');
+                        window.$emit('refresh-cart');
                     }"
                     v-slot="{ mutate, mutated }"
                 >
