@@ -37,7 +37,7 @@
                 let mutationName = Object.keys(response.data)[0]
                 let items = response.data[mutationName].wishlist
                 wishlist.value = items
-                window.$emit('rapidez:wishlist-changed', items)
+                window.$emit('wishlist-changed', items)
             }
         },
 
