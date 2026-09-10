@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/wishlist/compare/4.1.0...4.1.0)
+[Unreleased changes](https://github.com/rapidez/wishlist/compare/5.0.0...5.0.0)
+## [5.0.0](https://github.com/rapidez/wishlist/releases/tag/5.0.0) - 2026-09-10
+
+### Added
+
+- Rapidez v5 support (#27)
+
+### Changed
+
+- Removed Rapidez event prefix (#28)
+
 ## [4.1.0](https://github.com/rapidez/wishlist/releases/tag/4.1.0) - 2025-07-15
 
 ### Changed
